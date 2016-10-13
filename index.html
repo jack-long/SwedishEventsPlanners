@@ -5,30 +5,25 @@
     <title>Swedish Event Planners</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="login/login.module.js"></script>
+    <script src="login/login.component.js"></script>
+    <script src="view1/view1.module.js"></script>
+    <script src="view1/view1.component.js"></script>
   </head>
-  <body ng-controller="MainCtrl"> <!-- -->
-  <!-- <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul> -->
-  <p>Hello, {{name}}!</p>
 
-  <p>Total number of phones: {{phones.length}}</p>
-  <ul>
-    <li ng-repeat="phone in phones">
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>
+  <body>
+    <ul class="menu">
+      <li><a href="#!/login">login</a></li>
+      <li><a href="#!/view1">view1</a></li>
+    </ul>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
-  <!-- <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script> -->
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+    <div ng-view></div>
+
   </body>
 </html>
