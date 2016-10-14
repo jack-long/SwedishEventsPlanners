@@ -1,5 +1,12 @@
-<p>Login</p>
-<p>
-  <input ng-model="$ctrl.user"/>
-  <input ng-model="$ctrl.password"/>
-</p>
+<div class="loginmodal-container" tabindex="-1">
+	<h1>Login to Your Account</h1><br>
+  <form>
+	<input type="text" name="user" ng-model="$ctrl.user" placeholder="Username">
+	<input type="password" name="pass" ng-model="$ctrl.password" placeholder="Password">
+	<input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="$ctrl.login()">
+  </form>
+
+  <div class="login-help">
+	<a href="#">Register</a> - <a href="#">Forgot Password</a>
+  </div>
+</div>

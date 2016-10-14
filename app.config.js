@@ -1,6 +1,6 @@
 'use strict';
 
-angular.
+var app = angular.
   module('sepApp').
   config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
@@ -15,4 +15,12 @@ angular.
         }).
         otherwise('/login');
     }
+
   ]);
+
+// initialization
+app.controller("SEPController", ['$rootScope', function($rootScope){
+  $rootScope.user = "user";
+  $rootScope.password = "password"
+  }]
+)
