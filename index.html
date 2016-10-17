@@ -14,17 +14,35 @@
     <script src="login/login.module.js"></script>
     <script src="login/login.component.js"></script>
     <link rel="stylesheet" href="login/login.css" />
+    <script src="customer-service/customer-service.module.js"></script>
+    <script src="customer-service/customer-service.component.js"></script>
+    <script src="new-event-request/new-event-request.module.js"></script>
+    <script src="new-event-request/new-event-request.component.js"></script>
     <script src="view1/view1.module.js"></script>
     <script src="view1/view1.component.js"></script>
   </head>
 
   <body ng-controller="SEPController">
-    <ul class="menu">
-      <li><a href="#!/login">login</a></li>
-      <li><a href="#!/view1">view1</a></li>
-    </ul>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#!/login">login</a></li>
+            <li role="presentation"><a href="#!/view1">view1</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Swedish Events Planner</h3>
+      </div>
 
-    <div ng-view></div>
+      <div ng-view></div>
+
+      <!-- <footer class="footer">
+        <p>&copy; 2017 Company, Inc.</p>
+      </footer> -->
+    </div>
+
+
 
   </body>
 </html>
