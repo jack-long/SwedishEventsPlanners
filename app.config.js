@@ -19,6 +19,24 @@ var app = angular.
         .when('/event_requests/new', {
           template: '<new-event-request></new-event-request>'
         })
+        .when('/production-manager', {
+          template: '<production-manager></production-manager>'
+        })
+        .when('/service-department-manager', {
+          template: '<service-department-manager></service-department-manager>'
+        })
+        .when('/production-staff', {
+          template: '<production-staff></production-staff>'
+        })
+        .when('/service-department-staff', {
+          template: '<service-department-staff></service-department-staff>'
+        })
+        .when('/hr-manager', {
+          template: '<hr-manager></hr-manager>'
+        })
+        .when('/finance-manager', {
+          template: '<finance-manager></finance-manager>'
+        })
         .otherwise('/login');
     }
 

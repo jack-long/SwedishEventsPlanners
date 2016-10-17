@@ -5,5 +5,11 @@ angular.module('sepApp', [
   'login',
   'view1',
   'customerService',
-  'newEventRequest'
+  'newEventRequest',
+  'productionManager',
+  'productionStaff',
+  'serviceDepartmentManager',
+  'serviceDepartmentStaff',
+  'hrManager',
+  'financeManager'
 ]);
