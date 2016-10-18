@@ -7,6 +7,7 @@ angular.
     controller: ['$http', '$rootScope', '$location', '$window',
     	function CustomerServiceController($http, $rootScope, $location, $window) {
     		// role check
+        console.log($rootScope);
         if($rootScope.user != "customer_service"){
     			console.log($rootScope.user);
     			alert("You are not allowed to be here!");
@@ -20,10 +21,11 @@ angular.
         //   console.log("logout from customer_service");
         // }
 
-        var self = this;
-        $http.get('data/event_requests.json').then(function(response) {
-          self.requests = response.data;
-        });
+        // var self = this;
+        // $http.get('data/event_requests.json').then(function(response) {
+        //   self.requests = response.data;
+        // });
+        this.requests = $rootScope.event_requests;
 
         this.newForm = function(){
           $location.path("/event_requests/new");

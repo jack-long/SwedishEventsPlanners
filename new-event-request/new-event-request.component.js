@@ -4,7 +4,7 @@ angular.
   module('newEventRequest').
   component('newEventRequest', {
     templateUrl: 'new-event-request/new-event-request.template.html',
-    controller: ['$location', function NewEventRequestController($location) {
+    controller: ['$location', '$rootScope', function NewEventRequestController($location, $rootScope) {
     	var self = this;
 
     	// self.event = {
@@ -22,7 +22,12 @@ angular.
     	// 	expectedBudget: ""
     	// };
     	this.create = function(){
-    		console.log(self.event);
+            // init request
+            self.event.reviewer = "senior_customer_service";
+
+    		$rootScope.event_requests.push(self.event);
+            alert("New event request created.");
+            $location.path("/customer-service");
     	}
     	this.cancel = function($window){
     		// $window.history.back();

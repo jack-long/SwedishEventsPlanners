@@ -7,9 +7,12 @@ angular.
     controller: ['$http', '$rootScope', '$location', '$routeParams',
     	function reviewEventRequestsController($http, $rootScope, $location, $routeParams) {
 
+    	console.log($rootScope);
+    	this.user = $rootScope.user;
+    	console.log(this.user);
     	var self = this;
-    	// console.log(self);
-      self.recordNumber = "010003";
+
+
       self.recordNumber = $routeParams.recordNumber;
 
     //   $http.get('data/event_requests.json').then(function(response) {
