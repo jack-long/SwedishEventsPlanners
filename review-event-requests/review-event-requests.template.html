@@ -75,12 +75,12 @@
     </div>
   </div>
 
-	<div class="form-group">
+	<div class="form-group" ng-show="$ctrl.user != customer_service">
 		<div class="col-sm-offset-2 col-sm-2">
-		  <button type="submit" class="btn btn-primary" ng-click="$ctrl.approve()">Approve</button>
+		  <button type="submit" class="btn btn-primary" ng-click="$ctrl.approve()" ng-show="$ctrl.user != customer_service">Approve</button>
 		</div>
 		<div class="col-sm-offset-3 col-sm-2">
-		  <button type="submit" class="btn btn-danger" ng-click="$ctrl.reject()">Reject</button>
+		  <button type="submit" class="btn btn-danger" ng-click="$ctrl.reject()" ng-show="$ctrl.user != customer_service">Reject</button>
 		</div>
   </div>
 </form>
