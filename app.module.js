@@ -6,6 +6,8 @@ angular.module('sepApp', [
   'view1',
   'customerService',
   'newEventRequest',
+  'eventRequestList',
+  'reviewEventRequests',
   'productionManager',
   'productionStaff',
   'serviceDepartmentManager',

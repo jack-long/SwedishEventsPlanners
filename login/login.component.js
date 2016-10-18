@@ -27,7 +27,7 @@ angular.
             case "senior_customer_service": {
               if(self.password == "password"){
                 $rootScope.user = self.user;  // update user
-                $location.path("/senior_customer_service");
+                $location.path("/event_requests");
               }
               else{
                 alert("Wrong Password!");

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      <button type="button" class="btn btn-primary" ng-click="$ctrl.newForm()"  ng-show="$ctrl.user == customer_service">New Event Request</button>
+
+    </div>
+
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul>
+        <li ng-repeat="request in $ctrl.requests | filter:{reviewer: $ctrl.user}" class="thumbnail">
+          <a href="#!/event_requests/{{request.recordNumber}}" class="thumb">
+            <p>{{request.recordNumber}}, {{request.clientName}}, {{request.eventType}}, {{request.reviewer}}</p>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

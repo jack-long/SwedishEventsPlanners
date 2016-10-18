@@ -9,7 +9,7 @@ angular.
     		// role check
         if($rootScope.user != "customer_service"){
     			console.log($rootScope.user);
-    			alert("You are not allowed to be here!")
+    			alert("You are not allowed to be here!");
     			$window.history.back();
     		}
         else{
@@ -21,7 +21,7 @@ angular.
         // }
 
         var self = this;
-        $http.get('data/requests.json').then(function(response) {
+        $http.get('data/event_requests.json').then(function(response) {
           self.requests = response.data;
         });
 
