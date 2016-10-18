@@ -19,6 +19,9 @@ var app = angular.
         .when('/senior-customer-service', {
           template: '<review-event-requests></review-event-requests>'
         })
+        .when('/admin_manager', {
+          template: '<event-request-list></event-request-list>'
+        })
         .when('/event_requests/new', {
           template: '<new-event-request></new-event-request>'
         })
