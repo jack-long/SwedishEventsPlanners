@@ -34,20 +34,70 @@ angular.
               }
               break;
             }
-            case "financial_manager": {
+            case "admin_manager": {
               if(self.password == "password"){
                 $rootScope.user = self.user;  // update user
-                $location.path("/financial_manager");
+                $location.path("/admin_manager");
               }
               else{
                 alert("Wrong Password!");
               }
               break;
             }
-            case "admin_manager": {
+            case "production_manager": {
               if(self.password == "password"){
                 $rootScope.user = self.user;  // update user
-                $location.path("/admin_manager");
+                $location.path("/production-manager");
+              }
+              else{
+                alert("Wrong Password!");
+              }
+              break;
+            }
+            case "production_staff": {
+              if(self.password == "password"){
+                $rootScope.user = self.user;  // update user
+                $location.path("/production-staff");
+              }
+              else{
+                alert("Wrong Password!");
+              }
+              break;
+            }
+            case "service_department_manager": {
+              if(self.password == "password"){
+                $rootScope.user = self.user;  // update user
+                $location.path("/service-department-manager");
+              }
+              else{
+                alert("Wrong Password!");
+              }
+              break;
+            }
+            case "service_department_staff": {
+              if(self.password == "password"){
+                $rootScope.user = self.user;  // update user
+                $location.path("/service-department-staff");
+              }
+              else{
+                alert("Wrong Password!");
+              }
+              break;
+            }
+            case "hr_manager": {
+              if(self.password == "password"){
+                $rootScope.user = self.user;  // update user
+                $location.path("/hr-manager");
+              }
+              else{
+                alert("Wrong Password!");
+              }
+              break;
+            }
+            case "finance_manager": {
+              if(self.password == "password"){
+                $rootScope.user = self.user;  // update user
+                $location.path("/finance-manager");
               }
               else{
                 alert("Wrong Password!");
