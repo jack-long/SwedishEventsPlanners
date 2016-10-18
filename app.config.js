@@ -94,6 +94,23 @@ app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope',
   },
   recordNumber: "010005",
   reviewer: "financial_manager"
+},
+{
+  clientName: "Mark Otto",
+  eventType: "workshop",
+  expectedBudget: "10000",
+  fromDate: "2016/10/17",
+  toDate: "2016/10/19",
+  numberOfAttendees: "40",
+  preferences: {
+    decorations: true,
+    drinks: true,
+    meals: true,
+    parties: true,
+    photos: true
+  },
+  recordNumber: "010010",
+  reviewer: "production_manager"
 }
 ];
     // todo: logout not work
