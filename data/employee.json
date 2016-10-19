@@ -1,0 +1,114 @@
+[
+  {
+    "employeeId":"001",
+    "employeeName":"Mike",
+    "jobTitle":"Administration Department Manager",
+    "department":"Administration",
+    "subteam":"none",
+    "emailId":"mike@sep.se"
+  },
+  {
+    "employeeId":"002",
+    "employeeName":"Simon",
+    "jobTitle":"Senior HR Manager",
+    "department":"Administration",
+    "subteam":"HR",
+    "emailId":"simon@sep.se"
+  },
+  {
+    "employeeId":"003",
+    "employeeName":"Janet",
+    "jobTitle":"Senior Customer Service Officer",
+    "department":"Administration",
+    "subteam":"Customer Service",
+    "emailId":"janet@sep.se"
+  },
+  {
+    "employeeId":"004",
+    "employeeName":"David",
+    "jobTitle":"Marketing Officer",
+    "department":"Administration",
+    "subteam":"Marketing",
+    "emailId":"david@sep.se"
+  },
+  {
+    "employeeId":"005",
+    "employeeName":"Alice",
+    "jobTitle":"Finance Manager",
+    "department":"Finance",
+    "subteam":"none",
+    "emailId":"alice@sep.se"
+  },
+  {
+    "employeeId":"006",
+    "employeeName":"Jack",
+    "jobTitle":"Production Manager",
+    "department":"Production",
+    "subteam":"none",
+    "emailId":"jack@sep.se"
+  },
+  {
+    "employeeId":"007",
+    "employeeName":"Tobias",
+    "jobTitle":"Photographer",
+    "department":"Production",
+    "subteam":"Photograph",
+    "emailId":"tobias@sep.se"
+  },
+  {
+    "employeeId":"008",
+    "employeeName":"Antony",
+    "jobTitle":"Audio Speciallist",
+    "department":"Production",
+    "subteam":"Music",
+    "emailId":"antonyk@sep.se"
+  },
+  {
+    "employeeId":"009",
+    "employeeName":"Magy",
+    "jobTitle":"Decorating Architect",
+    "department":"Production",
+    "subteam":"Decorations",
+    "emailId":"magy@sep.se"
+  },
+  {
+    "employeeId":"010",
+    "employeeName":"Julia",
+    "jobTitle":"Graphic Designer",
+    "department":"Production",
+    "subteam":"Graphic",
+    "emailId":"julia@sep.se"
+  },
+  {
+    "employeeId":"011",
+    "employeeName":"Christian",
+    "jobTitle":"Network Engineer",
+    "department":"Production",
+    "subteam":"Computer Related",
+    "emailId":"christian@sep.se"
+  },
+  {
+    "employeeId":"012",
+    "employeeName":"Natalie",
+    "jobTitle":"Services Department Manager",
+    "department":"Services",
+    "subteam":"none",
+    "emailId":"natalie@sep.se"
+  },
+  {
+    "employeeId":"013",
+    "employeeName":"Helen",
+    "jobTitle":"Top Chef",
+    "department":"Services",
+    "subteam":"Food",
+    "emailId":"helen@sep.se"
+  },
+  {
+    "employeeId":"014",
+    "employeeName":"Kate",
+    "jobTitle":"Senior Waitress",
+    "department":"Services",
+    "subteam":"Food Serving",
+    "emailId":"kate@sep.se"
+  }
+]
