@@ -6,11 +6,13 @@ angular.
     templateUrl: 'review-event-requests/review-event-requests.template.html',
     controller: ['$http', '$rootScope', '$location', '$routeParams', 'DB',
     	function reviewEventRequestsController($http, $rootScope, $location, $routeParams, DB) {
-
-    	// console.log($rootScope);
-    	// this.user = $rootScope.user;
+    		if(DB.user == "customer_service"){
+    			this.privileged = false;
+    		} else {
+    			this.privileged = true;
+    		}
     	this.user = DB.user;
-    	console.log(this.user);
+    	console.log("user: " + this.user);
     	var self = this;
 
 
