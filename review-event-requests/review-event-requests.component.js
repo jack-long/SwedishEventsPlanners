@@ -37,8 +37,8 @@ angular.
 
 			switch(current){
 				case "senior_customer_service":
-					next = "financial_manager"; break;
-				case "financial_manager":
+					next = "finance_manager"; break;
+				case "finance_manager":
 					next = "admin_manager"; break;
 				case "admin_manager":
 					next = "approved"; break;
