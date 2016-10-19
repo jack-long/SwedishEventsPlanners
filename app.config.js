@@ -62,11 +62,6 @@ app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', '
   function($http, $rootScope, $location, $scope, DB){
     $rootScope.user = null;
     $rootScope.password = "password";
-    // this.login = DB.login;
-    // this.login = true;
-    $scope.login = DB.login;
-    // read DB
-    console.log(DB);
 
     // add info from http request
     $http.get('data/event_requests.json').then(function(response) {
@@ -81,61 +76,6 @@ app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', '
         DB.recruitment_request = response.data;
     });
 
-    console.log(DB);
-
-    // });
-    $rootScope.event_requests = [{
-  clientName: "College of Music",
-  eventType: "Workshop",
-  expectedBudget: "10000",
-  fromDate: "2016/10/17",
-  toDate: "2016/10/19",
-  numberOfAttendees: "40",
-  preferences: {
-    decorations: true,
-    drinks: true,
-    meals: true,
-    parties: true,
-    photos: true
-  },
-  recordNumber: "010003",
-  reviewer: "senior_customer_service"
-},
-{
-  clientName: "Mark Otto",
-  eventType: "workshop",
-  expectedBudget: "10000",
-  fromDate: "2016/10/17",
-  toDate: "2016/10/19",
-  numberOfAttendees: "40",
-  preferences: {
-    decorations: true,
-    drinks: true,
-    meals: true,
-    parties: true,
-    photos: true
-  },
-  recordNumber: "010005",
-  reviewer: "financial_manager"
-},
-{
-  clientName: "Mark Otto",
-  eventType: "workshop",
-  expectedBudget: "10000",
-  fromDate: "2016/10/17",
-  toDate: "2016/10/19",
-  numberOfAttendees: "40",
-  preferences: {
-    decorations: true,
-    drinks: true,
-    meals: true,
-    parties: true,
-    photos: true
-  },
-  recordNumber: "010010",
-  reviewer: "production_manager"
-}
-];
     // todo: logout not work
     this.logout = function(){
       $rootScope.user = null;
