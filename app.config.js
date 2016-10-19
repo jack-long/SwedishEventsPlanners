@@ -70,12 +70,17 @@ app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', '
 
     // add info from http request
     $http.get('data/event_requests.json').then(function(response) {
-        // var requests = response.data;
-        // console.log(typeof(requests));
-        // console.log(requests);
-        // DB.event_requests = requests;
         DB.event_requests = response.data;
     });
+
+    $http.get('data/employee.json').then(function(response) {
+        DB.employee = response.data;
+    });
+
+    $http.get('data/recruitment_request.json').then(function(response) {
+        DB.recruitment_request = response.data;
+    });
+
     console.log(DB);
 
     // });
