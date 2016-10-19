@@ -9,17 +9,17 @@ angular.
     	function LoginController($http, $rootScope, $location, DB) {
 
         var self = this;  // in order to pass it inside child function.
-        self.user = $rootScope.user;
+        // self.user = $rootScope.user;
         self.password = $rootScope.password;
 
         this.login = function(){
           switch(self.user){
             case "customer_service": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
                 DB.user = self.user;
                 DB.login = true;
-                $location.path("/customer-service");
+                $rootScope.login = true;
+                $location.path("/event_requests");
               }
               else{
                 alert("Wrong Password!");
@@ -28,7 +28,9 @@ angular.
             }
             case "senior_customer_service": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/event_requests");
               }
               else{
@@ -38,7 +40,9 @@ angular.
             }
             case "admin_manager": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/event_requests");
               }
               else{
@@ -48,7 +52,9 @@ angular.
             }
             case "production_manager": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/production-manager");
               }
               else{
@@ -58,7 +64,9 @@ angular.
             }
             case "production_staff": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/production-staff");
               }
               else{
@@ -68,7 +76,9 @@ angular.
             }
             case "service_department_manager": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/service-department-manager");
               }
               else{
@@ -78,7 +88,9 @@ angular.
             }
             case "service_department_staff": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/service-department-staff");
               }
               else{
@@ -88,7 +100,9 @@ angular.
             }
             case "hr_manager": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/hr-manager");
               }
               else{
@@ -98,7 +112,9 @@ angular.
             }
             case "finance_manager": {
               if(self.password == "password"){
-                $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
+                $rootScope.login = true;
                 $location.path("/finance-manager");
               }
               else{
