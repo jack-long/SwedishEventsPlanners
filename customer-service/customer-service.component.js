@@ -4,12 +4,12 @@ angular.
   module('customerService').
   component('customerService', {
     templateUrl: 'customer-service/customer-service.template.html',
-    controller: ['$http', '$rootScope', '$location', '$window',
-    	function CustomerServiceController($http, $rootScope, $location, $window) {
+    controller: ['$http', '$rootScope', '$location', '$window', 'DB', '$scope',
+    	function CustomerServiceController($http, $rootScope, $location, $window, DB, $scope) {
     		// role check
-        console.log($rootScope);
+        $scope.login = DB.login;
         if($rootScope.user != "customer_service"){
-    			console.log($rootScope.user);
+    			// console.log($rootScope.user);
     			alert("You are not allowed to be here!");
     			$window.history.back();
     		}
@@ -25,7 +25,9 @@ angular.
         // $http.get('data/event_requests.json').then(function(response) {
         //   self.requests = response.data;
         // });
-        this.requests = $rootScope.event_requests;
+
+        // this.requests = $rootScope.event_requests;
+        this.requests = DB.event_requests;
 
         this.newForm = function(){
           $location.path("/event_requests/new");

@@ -4,8 +4,8 @@ angular.
   module('eventRequestList').
   component('eventRequestList', {
     templateUrl: 'event-request-list/event-request-list.template.html',
-    controller: ['$http', '$rootScope', '$location', '$window',
-    	function eventRequestListController($http, $rootScope, $location, $window) {
+    controller: ['$http', '$rootScope', '$location', '$window', 'DB',
+    	function eventRequestListController($http, $rootScope, $location, $window, DB) {
     		// role check
         this.user = $rootScope.user;
         // this.user = "senior_customer_service";
@@ -23,7 +23,8 @@ angular.
         //   self.requests = response.data;
         // });
 
-        this.requests = $rootScope.event_requests;
+        // this.requests = $rootScope.event_requests;
+        this.requests = DB.event_requests;
 
         this.newForm = function(){
           $location.path("/event_requests/new");

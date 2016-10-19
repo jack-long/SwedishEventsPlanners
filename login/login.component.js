@@ -5,8 +5,8 @@ angular.
   module('login').
   component('login', {
     templateUrl: 'login/login.template.html',
-    controller: ['$http', '$rootScope', '$location',
-    	function LoginController($http, $rootScope, $location) {
+    controller: ['$http', '$rootScope', '$location', 'DB',
+    	function LoginController($http, $rootScope, $location, DB) {
 
         var self = this;  // in order to pass it inside child function.
         self.user = $rootScope.user;
@@ -17,6 +17,8 @@ angular.
             case "customer_service": {
               if(self.password == "password"){
                 $rootScope.user = self.user;  // update user
+                DB.user = self.user;
+                DB.login = true;
                 $location.path("/customer-service");
               }
               else{
@@ -108,7 +110,6 @@ angular.
             default:
               alert("User not exist!");
           }
-
     		}
     }]
   })

@@ -54,15 +54,30 @@ var app = angular.
 
   ]);
 
+// The Value Recipe
+app.value('DB', {user: "", event_requests: [], login: false});
+
 // initialization
-app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope',
-  function($http, $rootScope, $location, $scope){
+app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', 'DB',
+  function($http, $rootScope, $location, $scope, DB){
     $rootScope.user = null;
     $rootScope.password = "password";
-    // $rootScope.event_requests = [];
-    // var event_requests;
-    // $http.get('data/event_requests.json').success(function(response) {
-    //     $scope.event_requests = response.data;
+    // this.login = DB.login;
+    // this.login = true;
+    $scope.login = DB.login;
+    // read DB
+    console.log(DB);
+
+    // add info from http request
+    $http.get('data/event_requests.json').then(function(response) {
+        // var requests = response.data;
+        // console.log(typeof(requests));
+        // console.log(requests);
+        // DB.event_requests = requests;
+        DB.event_requests = response.data;
+    });
+    console.log(DB);
+
     // });
     $rootScope.event_requests = [{
   clientName: "College of Music",
