@@ -7,7 +7,8 @@ angular.
     controller: ['$http', '$rootScope', '$location', '$window', 'DB',
     	function eventRequestListController($http, $rootScope, $location, $window, DB) {
     		// role check
-        this.user = $rootScope.user;
+        // this.user = $rootScope.user;
+        this.user = DB.user;
         // this.user = "senior_customer_service";
         // this.user = "financial_manager";
         console.log(this.user);
