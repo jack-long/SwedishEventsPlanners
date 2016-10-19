@@ -13,7 +13,8 @@
 		"photos": true
 	},
 	"recordNumber": "010003",
-	"reviewer": "senior_customer_service"
+	"reviewer": "senior_customer_service",
+  "comments": ""
 },
 {
   "clientName": "Mark Otto",
@@ -30,10 +31,11 @@
     "photos": true
   },
   "recordNumber": "010005",
-  "reviewer": "financial_manager"
+  "reviewer": "finance_manager",
+  "comments": ""
 },
 {
-  "clientName": "Mark Otto",
+  "clientName": "Mike Li",
   "eventType": "workshop",
   "expectedBudget": "10000",
   "fromDate": "2016/10/17",
@@ -47,6 +49,7 @@
     "photos": true
   },
   "recordNumber": "010010",
-  "reviewer": "production_manager"
+  "reviewer": "admin_manager",
+  "comments": ""
 }
 ]
