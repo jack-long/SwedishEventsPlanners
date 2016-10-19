@@ -26,30 +26,30 @@
   <div class="panel-body">
     <form class="form-horizontal">
       <div class="form-group">
-        <label class="col-sm-3 control-label">Record number :</label>
+        <label class="col-sm-3 control-label">Event Id :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Record Number" ng-model="$ctrl.event.recordNumber">
+          <input type="text" class="form-control" placeholder="Eg. e12488" ng-model="$ctrl.event.recordNumber">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Client name :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Client Name " ng-model="$ctrl.event.clientName">
+          <input type="text" class="form-control" placeholder="Eg. Company Inc. " ng-model="$ctrl.event.clientName">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Event type :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Event Type" ng-model="$ctrl.event.eventType">
+          <input type="text" class="form-control" placeholder="Eg. Seminar" ng-model="$ctrl.event.eventType">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Expected number of attendees :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Expected number of attendees" ng-model="$ctrl.event.numberOfAttendees">
+          <input type="text" class="form-control" placeholder="Eg. 100 to 120" ng-model="$ctrl.event.numberOfAttendees">
         </div>
       </div>
 
@@ -67,21 +67,21 @@
       <div class="form-group">
         <label class="col-sm-3 control-label">From: </label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="YYYY/MM/DD" ng-model="$ctrl.event.fromDate">
+          <input type="date" class="form-control"  ng-model="$ctrl.event.fromDate">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">To: </label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="YYYY/MM/DD" ng-model="$ctrl.event.toDate">
+          <input type="date" class="form-control"  ng-model="$ctrl.event.toDate">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Expected budget</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Expected Budget" ng-model="$ctrl.event.expectedBudget">
+          <input type="text" class="form-control" placeholder="Eg. 10000 SEK" ng-model="$ctrl.event.expectedBudget">
         </div>
       </div>
 
