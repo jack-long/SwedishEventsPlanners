@@ -11,6 +11,8 @@ angular.
         var self = this;  // in order to pass it inside child function.
         // self.user = $rootScope.user;
         self.password = $rootScope.password;
+        this.test_pw = "password";
+        self.test = true;
 
         this.login = function(){
           switch(self.user){

@@ -45,27 +45,27 @@
     <label class="col-sm-3 control-label">Preferences</label>
     <div class="col-sm-offset-3 col-sm-7">
     	<label class="checkbox-inline">
-			  <input type="checkbox" ng-model="$ctrl.event.preferences.decorations" value=""> Decorations
+			  <input type="checkbox" ng-model="$ctrl.event.preferences.decorations"> Decorations
 			</label>
 			<label class="checkbox-inline">
 			  <input type="checkbox" ng-model="$ctrl.event.preferences.meals"> Breakfast, lunch, dinner
 			</label>
-	</div>
+		</div>
 
-	<div class="col-sm-offset-3 col-sm-7">
+		<div class="col-sm-offset-3 col-sm-7">
     	<label class="checkbox-inline">
 			  <input type="checkbox" ng-model="$ctrl.event.preferences.parties"> Parties
 			</label>
 			<label class="checkbox-inline">
 			  <input type="checkbox" ng-model="$ctrl.event.preferences.drinks"> Soft/hot drinks
 			</label>
-	</div>
+		</div>
 
-	<div class="col-sm-offset-3 col-sm-7">
+		<div class="col-sm-offset-3 col-sm-7">
     	<label class="checkbox-inline">
 			  <input type="checkbox" ng-model="$ctrl.event.preferences.photos"> Photos/filming
 			</label>
-	</div>
+		</div>
   </div>
 
   <div class="form-group">
@@ -75,23 +75,13 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-sm-3 control-label">Comments</label>
-    <div class="col-sm-9">
-      <textarea type="text" class="form-control" placeholder="Comments" ng-model="$ctrl.event.comments"></textarea>
-    </div>
-  </div>
-
 	<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-1">
-      <!-- <a class="btn btn-default" href="#!/event_requests">Back</a> -->
-      <button type="submit" class="btn btn-success" ng-click="$ctrl.goBack()">Back</button>
-    </div>
-		<div class="col-sm-offset-1 col-sm-2">
-		  <button type="submit" class="btn btn-success" ng-if="$ctrl.privileged" ng-click="$ctrl.approve()">Approve</button>
+		<div class="col-sm-offset-2 col-sm-2">
+		  <button type="submit" class="btn btn-primary" ng-click="$ctrl.create()">Submit</button>
 		</div>
-		<div class="col-sm-offset-1 col-sm-2">
-		  <button type="submit" class="btn btn-danger" ng-if="$ctrl.privileged" ng-click="$ctrl.reject()">Reject</button>
+		<div class="col-sm-offset-3 col-sm-2">
+		  <a class="btn btn-danger" href="#!/event_requests">Cancel</a>
 		</div>
   </div>
 </form>
+

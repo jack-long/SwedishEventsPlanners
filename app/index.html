@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" ng-app="sepApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Swedish Event Planners</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="login/login.module.js"></script>
+    <script src="login/login.component.js"></script>
+    <link rel="stylesheet" href="login/login.css" />
+    <script src="customer-service/customer-service.module.js"></script>
+    <script src="customer-service/customer-service.component.js"></script>
+    <script src="new-event-request/new-event-request.module.js"></script>
+    <script src="new-event-request/new-event-request.component.js"></script>
+    <script src="review-event-requests/review-event-requests.module.js"></script>
+    <script src="review-event-requests/review-event-requests.component.js"></script>
+    <script src="event-request-list/event-request-list.module.js"></script>
+    <script src="event-request-list/event-request-list.component.js"></script>
+    <script src="view1/view1.module.js"></script>
+    <script src="view1/view1.component.js"></script>
+    <script src= "production-manager/production-manager.module.js"></script>
+    <script src= "production-manager/production-manager.component.js"></script>
+    <script src= "production-staff/production-staff.module.js"></script>
+    <script src= "production-staff/production-staff.component.js"></script>
+    <script src= "service-department-manager/service-department-manager.module.js"></script>
+    <script src= "service-department-manager/service-department-manager.component.js"></script>
+    <script src= "service-department-staff/service-department-staff.module.js"></script>
+    <script src= "service-department-staff/service-department-staff.component.js"></script>
+    <script src= "hr-manager/hr-manager.module.js"></script>
+    <script src= "hr-manager/hr-manager.component.js"></script>
+    <script src= "finance-manager/finance-manager.module.js"></script>
+    <script src= "finance-manager/finance-manager.component.js"></script>
+    </script>
+  </head>
+
+  <body ng-controller="SEPController">
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active" ng-if="login"><a href="#!/login">logout</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Swedish Events Planner</h3>
+      </div>
+
+      <div ng-view></div>
+
+      <!-- <footer class="footer">
+        <p>&copy; 2017 Company, Inc.</p>
+      </footer> -->
+    </div>
+
+
+
+  </body>
+</html>

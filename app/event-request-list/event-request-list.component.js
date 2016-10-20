@@ -8,7 +8,15 @@ angular.
     	function eventRequestListController($http, $rootScope, $location, $window, DB) {
     		// role check
         // this.user = $rootScope.user;
+        $rootScope.user = DB.user;
         this.user = DB.user;
+
+        if (this.user == "senior_customer_service"){
+            this.newMeetingPermission = true;
+        } else {
+            this.newMeetingPermission = false;
+        }
+
         // this.user = "senior_customer_service";
         // this.user = "financial_manager";
         console.log(this.user);
@@ -19,16 +27,15 @@ angular.
         //   console.log("logout from customer_service");
         // }
 
-        // var self = this;
-        // $http.get('data/event_requests.json').then(function(response) {
-        //   self.requests = response.data;
-        // });
-
         // this.requests = $rootScope.event_requests;
         this.requests = DB.event_requests;
 
         this.newForm = function(){
           $location.path("/event_requests/new");
+        }
+
+        this.newMeeting = function(){
+
         }
     }]
   });

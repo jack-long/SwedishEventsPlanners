@@ -20,8 +20,6 @@ angular.
 
 		var requests = DB.event_requests;
 
-		// console.log(requests);
-		// console.log(self.recordNumber);
 		for (var i = 0; i < requests.length; i++) {
 			if(self.recordNumber == requests[i].recordNumber){
 					self.event = requests[i];
@@ -48,15 +46,20 @@ angular.
 
 			}
 
-			self.reviewer = next;
+			self.event.reviewer = next;
 
-			DB.event_requests[self.index].reviewer = self.reviewer;
-			// $location.path("/event_requests");
+			DB.event_requests[self.index] = self.event;
 			$window.history.go(-1);
 		}
 
 		this.reject = function(){
-			DB.event_requests[self.index].reviewer = "Rejected-SeniorCS";
+			switch(DB.user){
+				case "senior_customer_service":
+					self.event.reviewer = "Rejected by SeniorCS"; break;
+				case "admin_manager":
+					self.event.reviewer = "Rejected by Admin"; break;
+			}
+			DB.event_requests[self.index] = self.event;
 			// $location.path("/event_requests");
 			$window.history.go(-1);
 		}
