@@ -1,0 +1,343 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Search Event Requests</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Event Id</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Record Number">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-2">
+        <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">View Event Request</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Event Id :</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg. e12488" ng-model="$ctrl.event.recordNumber">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Client name :</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg. Company Inc. " ng-model="$ctrl.event.clientName">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Event type :</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg. Seminar" ng-model="$ctrl.event.eventType">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Expected number of attendees :</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg. 100 to 120" ng-model="$ctrl.event.numberOfAttendees">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Preferences :</label>
+        <div class="col-sm-4">
+          <label class="checkbox-inline"><input type="checkbox" ng-model="$ctrl.event.preferences.decorations" value=""> Decorations</label>
+      		<label class="checkbox-inline"><input type="checkbox" ng-model="$ctrl.event.preferences.meals"> Breakfast, lunch, dinner</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="$ctrl.event.preferences.parties"> Parties</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="$ctrl.event.preferences.drinks"> Soft/hot drinks</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="$ctrl.event.preferences.photos"> Photos/filming</label>
+        </div>
+    	</div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">From: </label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control"  ng-model="$ctrl.event.fromDate">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">To: </label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control"  ng-model="$ctrl.event.toDate">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Expected budget</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg. 10000 SEK" ng-model="$ctrl.event.expectedBudget">
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Allocate task to sub-teams</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+          <div class="form-group">
+            <br>
+            <label class="col-sm-3 control-label" for="projectReference"> Project Reference : </label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" placeholder="Eg: e12488">
+            </div>
+          </div>
+          <div class="form-group">
+            <br>
+            <label class="col-sm-3 control-label" for="projectReference"> Task Subject : </label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" placeholder="...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="description"> Description : </label>
+            <div class="col-sm-4">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-3 control-label" for="assignTo"> Assign To : </label>
+              <div class="col-sm-4">
+                <select class="form-control">
+                  <optgroup label="Decorations">
+                    <option>Magy</option>
+                    <option>Angelina</option>
+                    <option>Don</option>
+                    <option>Tom</option>
+                  </optgroup>
+                  <optgroup label="Photograph">
+                    <option>Tobias</option>
+                    <option>Magdalena</option>
+                  </optgroup>
+                  <optgroup label="Music">
+                    <option>Antony</option>
+                    <option>Adam</option>
+                  </optgroup>
+                  <optgroup label="Graphic Design">
+                    <option>Julia</option>
+                    <option>Raymond</option>
+                  </optgroup>
+                  <optgroup label="Computer Related">
+                    <option>Christian</option>
+                    <option>Nicolas</option>
+                    <option>Michael</option>
+                    <option>Robert</option>
+                  </optgroup>
+                </select>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-3 control-label" for="Priority"> Priority : </label>
+              <div class="col-sm-4">
+                <select class="form-control">
+                  <option>High</option>
+                  <option>Medium</option>
+                  <option>Low</option>
+                </select>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-2">
+            <button type="submit" class="btn btn-primary">Assign Task</button>
+            </div>
+          </div>
+        </form>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Search Tasks</h3>
+  </div>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <br>
+      <label class="col-sm-3 control-label" for="projectReference"> Event Id : </label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="Eg: e12488">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-2">
+      <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </form>
+  <div class="panel-body">
+    <table class="table table-hover">
+      <tr>
+        <th>Event Id</th>
+        <th>Task Id</th>
+        <th>Task Subject</th>
+        <th>Priority</th>
+        <th>Asignee</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td>Sample</td>
+        <td>Sample</td>
+        <td>Sample</td>
+        <td>Sample</td>
+        <td>Sample</td>
+        <td>Sample</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">View Task</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+    <div class="form-group">
+      <br>
+      <label class="col-sm-3 control-label" for="projectReference"> Project Reference : </label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="Eg: e12488">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="description"> Description : </label>
+      <div class="col-sm-4">
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="Priority"> Priority : </label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg: High">
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="description"> Previous Comments : </label>
+      <div class="col-sm-4">
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="description"> Add Comment : </label>
+      <div class="col-sm-4">
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-2">
+      <button type="submit" class="btn btn-primary">Update Task</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recruitment Request</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="contractType">Contract Type : </label>
+        <label class="radio-inline"><input type="radio" name="optradio">Full time</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Part time</label>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="requestingDepartment"> Requesting Department : </label>
+        <label class="radio-inline"><input type="radio" name="optradio">Administration</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Services</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Production</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Financial</label>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="yearOfExperience"> Years of Experience : </label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg: 3 years minium">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="jobTitle">Job Title :  </label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg: Graphic Designer">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="jobDescription">Job Description:  </label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-offset-3 col-sm-2">
+          <button type="submit" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Finance Request</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="requestingDepartment"> Requesting Department : </label>
+        <label class="radio-inline"><input type="radio" name="optradio">Administration</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Services</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Production</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Financial</label>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="projectReference"> Project Reference : </label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg: e12488">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="requiredAmount"> Required Amount :  </label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg: 5000 SEK">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="reason"> Reason : </label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-offset-3 col-sm-2">
+          <button type="submit" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
