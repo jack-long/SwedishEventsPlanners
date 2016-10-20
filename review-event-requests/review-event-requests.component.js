@@ -4,8 +4,8 @@ angular.
   module('reviewEventRequests').
   component('reviewEventRequests', {
     templateUrl: 'review-event-requests/review-event-requests.template.html',
-    controller: ['$http', '$rootScope', '$location', '$routeParams', 'DB',
-    	function reviewEventRequestsController($http, $rootScope, $location, $routeParams, DB) {
+    controller: ['$http', '$window', '$location', '$routeParams', 'DB',
+    	function reviewEventRequestsController($http, $window, $location, $routeParams, DB) {
     		if(DB.user == "customer_service"){
     			this.privileged = false;
     		} else {
@@ -18,7 +18,6 @@ angular.
 
 		self.recordNumber = $routeParams.recordNumber;
 
-		// var requests = $rootScope.event_requests;
 		var requests = DB.event_requests;
 
 		// console.log(requests);
@@ -30,6 +29,10 @@ angular.
 					break;
 			}
 		};
+
+		this.goBack = function(){
+			$window.history.go(-1);
+		}
 
 		this.approve = function(){
 			var current = self.event.reviewer;
@@ -47,15 +50,15 @@ angular.
 
 			self.reviewer = next;
 
-			// $rootScope.event_requests[self.index].reviewer = self.reviewer;
 			DB.event_requests[self.index].reviewer = self.reviewer;
-			// console.log($rootScope.event_requests);
-			$location.path("/event_requests");
+			// $location.path("/event_requests");
+			$window.history.go(-1);
 		}
 
 		this.reject = function(){
 			DB.event_requests[self.index].reviewer = "Rejected-SeniorCS";
-			$location.path("/event_requests");
+			// $location.path("/event_requests");
+			$window.history.go(-1);
 		}
 
     }]

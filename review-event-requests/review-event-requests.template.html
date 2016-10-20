@@ -84,7 +84,8 @@
 
 	<div class="form-group">
     <div class="col-sm-offset-2 col-sm-1">
-      <a class="btn btn-default" href="#!/event_requests">Back</a>
+      <!-- <a class="btn btn-default" href="#!/event_requests">Back</a> -->
+      <button type="submit" class="btn btn-success" ng-click="$ctrl.goBack()">Back</button>
     </div>
 		<div class="col-sm-offset-1 col-sm-2">
 		  <button type="submit" class="btn btn-success" ng-if="$ctrl.privileged" ng-click="$ctrl.approve()">Approve</button>
