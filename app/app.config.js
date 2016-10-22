@@ -76,6 +76,18 @@ app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', '
         DB.recruitment_request = response.data;
     });
 
+    $http.get('data/finance_request.json').then(function(response) {
+        DB.finance_request = response.data;
+    });
+
+    $http.get('data/task.json').then(function(response) {
+        DB.task = response.data;
+    });
+
+    $http.get('data/schedule.json').then(function(response) {
+        DB.schedule = response.data;
+    });
+
     // todo: logout not work
     this.logout = function(){
       $rootScope.user = null;
