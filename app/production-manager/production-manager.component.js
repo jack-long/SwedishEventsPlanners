@@ -60,10 +60,6 @@ angular.
               console.log(JSON.stringify($scope.searchedTask));
               break;
             }
-            else {
-              alert("Event Id not present !!!");
-              break;
-            }
           }
         }else {
           $scope.searchedTask=tasks;
@@ -91,9 +87,6 @@ angular.
         for (var i = 0; i < eventRequests.length; i++) {
           if (eventRequests[i].recordNumber == eventId) {
             $scope.displayedEvent = eventRequests[i];
-            break;
-          }else {
-            alert("Event Id not present !!!");
             break;
           }
         }

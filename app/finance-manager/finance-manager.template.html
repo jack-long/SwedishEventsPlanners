@@ -26,10 +26,10 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Search Finance Request</h3>
+    <h3 class="panel-title">List of Finance Request</h3>
   </div>
   <div class="panel-body">
-    <form class="form-horizontal">
+    <!--<form class="form-horizontal">
       <div class="form-group">
         <label class="col-sm-3 control-label" for="requestingDepartment"> Requesting Department : </label>
         <label class="radio-inline"><input type="radio" name="optradio">Administration</label>
@@ -48,24 +48,20 @@
         <button type="submit" class="btn btn-primary">Search</button>
         </div>
       </div>
-    </form>
+    </form> -->
 
     <table class="table table-hover">
       <tr>
         <th>Event Id</th>
         <th>Requesting Department</th>
-        <th>FinanceRequest Id</th>
-        <th>Customer Name</th>
+        <th>Amount Required</th>
         <th>Details</th>
-        <th>Status</th>
       </tr>
-      <tr>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
+      <tr ng-repeat="f in financeRequests">
+        <td>{{f.eventId}}</td>
+        <td>{{f.requestingDepartment}}</td>
+        <td>{{f.requiredAmount}}</td>
+        <td><a class="btn btn-primary" ng-click="displayFinanceRequest(f)">View Details</a></td>
       </tr>
     </table>
 
@@ -80,35 +76,35 @@
     <form class="form-horizontal">
       <div class="form-group">
         <label class="col-sm-3 control-label" for="requestingDepartment"> Requesting Department : </label>
-        <label class="radio-inline"><input type="radio" name="optradio">Administration</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Services</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Production</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Financial</label>
+        <label class="radio-inline"><input type="radio" ng-model="displayedfinanceRequest.requestingDepartment" value="Administration" readonly>Administration</label>
+        <label class="radio-inline"><input type="radio" ng-model="displayedfinanceRequest.requestingDepartment" value="Services" readonly>Services</label>
+        <label class="radio-inline"><input type="radio" ng-model="displayedfinanceRequest.requestingDepartment" value="Production" readonly>Production</label>
+        <label class="radio-inline"><input type="radio" ng-model="displayedfinanceRequest.requestingDepartment" value="Finance" readonly>Financial</label>
       </div>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="projectReference"> Event Id : </label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg: e12488">
+          <input type="text" class="form-control" placeholder="Eg: e12488" ng-model="displayedfinanceRequest.eventId" readonly>
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="requiredAmount"> Required Amount :  </label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg: 5000 SEK">
+          <input type="text" class="form-control" placeholder="Eg: 5000 SEK" ng-model="displayedfinanceRequest.requiredAmount" readonly>
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="reason"> Reason : </label>
         <div class="col-sm-4">
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" rows="3" ng-model="displayedfinanceRequest.reason" readonly></textarea>
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-2">
-        <button type="submit" class="btn btn-primary">Approve</button>
+        <button type="submit" class="btn btn-primary" ng-click="approveFinanceRequest()">Approve</button>
         </div>
         <div class="col-sm-offset-3 col-sm-2">
-          <button type="submit" class="btn btn-danger">Decline</button>
+          <button type="submit" class="btn btn-danger" ng-click="declineFinanceRequest()">Decline</button>
         </div>
       </div>
     </form>
