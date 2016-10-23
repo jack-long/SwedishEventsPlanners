@@ -1,0 +1,35 @@
+[
+  {
+    "eventId":"e123",
+    "taskSubject":" Make event theme",
+    "description":" Suggest a theme for the event as per the client's requirement and do appropriate decorations",
+    "assignedTo":"Magy",
+    "priority":"High",
+    "comments":[
+      {"name":"Jack","comment":"Please complete as soon as possible"},
+      {"name":"Magy","comment":"ok"}
+    ]
+  },
+  {
+    "eventId":"e145",
+    "taskSubject":"Create a playlist",
+    "description":" Create a playslist of songs for the event as per the client's requirement ",
+    "assignedTo":"Adam",
+    "priority":"Medium",
+    "comments":[
+      {"name":"Jack","comment":"Please complete as soon as possible"},
+      {"name":"Adam","comment":"ok"}
+    ]
+  },
+  {
+    "eventId":"e088",
+    "taskSubject":" Create a Menu",
+    "description":" Create a Menu for the event as per the client's requirement and consult them",
+    "assignedTo":"Helen",
+    "priority":"High",
+    "comments":[
+      {"name":"Natalie","comment":"Please complete as soon as possible"},
+      {"name":"Helen","comment":"ok"}
+    ]
+  }
+]

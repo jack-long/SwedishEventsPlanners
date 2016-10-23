@@ -7,12 +7,12 @@
       <div class="form-group">
         <label class="col-sm-3 control-label">Event Id</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Record Number">
+          <input type="text" class="form-control" placeholder="Record Number" ng-model="searchRecordNumber">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-2">
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-primary" ng-click="searchEvent()">Search</button>
         </div>
       </div>
     </form>
@@ -28,67 +28,67 @@
       <div class="form-group">
         <label class="col-sm-3 control-label">Event Id :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg. e12488">
+          <input type="text" class="form-control" placeholder="Eg. e12488" ng-model="displayedEvent.recordNumber" readonly>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Client name :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg. Company Inc. ">
+          <input type="text" class="form-control" placeholder="Eg. Company Inc. " ng-model="displayedEvent.clientName" readonly>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Event type :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg. Seminar" >
+          <input type="text" class="form-control" placeholder="Eg. Seminar"  ng-model="displayedEvent.eventType" readonly>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Expected number of attendees :</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg. 100 to 120">
+          <input type="text" class="form-control" placeholder="Eg. 100 to 120" ng-model="displayedEvent.numberOfAttendees" readonly>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Preferences :</label>
         <div class="col-sm-4">
-          <label class="checkbox-inline"><input type="checkbox" > Decorations</label>
-      		<label class="checkbox-inline"><input type="checkbox" > Breakfast, lunch, dinner</label>
-          <label class="checkbox-inline"><input type="checkbox" > Parties</label>
-          <label class="checkbox-inline"><input type="checkbox" > Soft/hot drinks</label>
-          <label class="checkbox-inline"><input type="checkbox" > Photos/filming</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="displayedEvent.preferences.decorations" readonly> Decorations</label>
+      		<label class="checkbox-inline"><input type="checkbox" ng-model="displayedEvent.preferences.meals" readonly> Breakfast, lunch, dinner</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="displayedEvent.preferences.parties" readonly> Parties</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="displayedEvent.preferences.drinks" readonly> Soft/hot drinks</label>
+          <label class="checkbox-inline"><input type="checkbox" ng-model="displayedEvent.preferences.photos" readonly> Photos/filming</label>
         </div>
     	</div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">From: </label>
         <div class="col-sm-4">
-          <input type="date" class="form-control">
+          <input type="text" class="form-control" ng-model="displayedEvent.fromDate" readonly>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">To: </label>
         <div class="col-sm-4">
-          <input type="date" class="form-control">
+          <input type="text" class="form-control" ng-model="displayedEvent.toDate" readonly>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">Expected budget</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg. 10000 SEK" >
+          <input type="text" class="form-control" placeholder="Eg. 10000 SEK" ng-model="displayedEvent.expectedBudget" readonly>
         </div>
       </div>
 
     </form>
   </div>
 </div>
-
+<!-- Allocating tasks to sub teams-->
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Allocate task to sub-teams</h3>
@@ -97,51 +97,51 @@
     <form class="form-horizontal">
           <div class="form-group">
             <br>
-            <label class="col-sm-3 control-label" for="projectReference"> Project Reference : </label>
+            <label class="col-sm-3 control-label" for="projectReference"> Event Id : </label>
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Eg: e12488">
+              <input type="text" class="form-control" placeholder="Eg: e12488" ng-model="assignTask.eventId">
             </div>
           </div>
           <div class="form-group">
             <br>
-            <label class="col-sm-3 control-label" for="projectReference"> Task Subject : </label>
+            <label class="col-sm-3 control-label" for="taskSubject"> Task Subject : </label>
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="...">
+              <input type="text" class="form-control" placeholder="..." ng-model="assignTask.taskSubject">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label" for="description"> Description : </label>
             <div class="col-sm-4">
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" ng-model="assignTask.description"></textarea>
             </div>
           </div>
           <div class="form-group">
               <label class="col-sm-3 control-label" for="assignTo"> Assign To : </label>
               <div class="col-sm-4">
-                <select class="form-control">
+                <select class="form-control" ng-model="assignTask.assignedTo">
                   <optgroup label="Decorations">
-                    <option>Magy</option>
-                    <option>Angelina</option>
-                    <option>Don</option>
-                    <option>Tom</option>
+                    <option  value="Magy">Magy</option>
+                    <option  value="Angelina">Angelina</option>
+                    <option  value="Don">Don</option>
+                    <option  value="Tom">Tom</option>
                   </optgroup>
                   <optgroup label="Photograph">
-                    <option>Tobias</option>
-                    <option>Magdalena</option>
+                    <option   value="Tobias">Tobias</option>
+                    <option   value="Magdalena"> Magdalena</option>
                   </optgroup>
                   <optgroup label="Music">
-                    <option>Antony</option>
-                    <option>Adam</option>
+                    <option   value="Antony">Antony</option>
+                    <option   value="Adam">Adam</option>
                   </optgroup>
                   <optgroup label="Graphic Design">
-                    <option>Julia</option>
-                    <option>Raymond</option>
+                    <option   value="Julia">Julia</option>
+                    <option   value="Raymond">Raymond</option>
                   </optgroup>
                   <optgroup label="Computer Related">
-                    <option>Christian</option>
-                    <option>Nicolas</option>
-                    <option>Michael</option>
-                    <option>Robert</option>
+                    <option   value="Christian">Christian</option>
+                    <option   value="Nicholas">Nicolas</option>
+                    <option   value="Michael">Michael</option>
+                    <option   value="Robert">Robert</option>
                   </optgroup>
                 </select>
               </div>
@@ -149,22 +149,24 @@
           <div class="form-group">
               <label class="col-sm-3 control-label" for="Priority"> Priority : </label>
               <div class="col-sm-4">
-                <select class="form-control">
-                  <option>High</option>
-                  <option>Medium</option>
-                  <option>Low</option>
+                <select class="form-control" ng-model="assignTask.priority">
+                  <option  value="High">High</option>
+                  <option  value="Medium">Medium</option>
+                  <option  value="Low">Low</option>
                 </select>
               </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-2">
-            <button type="submit" class="btn btn-primary">Assign Task</button>
+            <button type="submit" class="btn btn-primary" ng-click="assignedTask()">Assign Task</button>
             </div>
           </div>
         </form>
+        {{assignTask}}
   </div>
 </div>
 
+<!-- Searching for tasks-->
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Search Tasks</h3>
@@ -174,12 +176,12 @@
       <br>
       <label class="col-sm-3 control-label" for="projectReference"> Event Id : </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" placeholder="Eg: e12488">
+        <input type="text" class="form-control" placeholder="Eg: e12488" ng-model="searchEventId">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-2">
-      <button type="submit" class="btn btn-primary">Search</button>
+      <button type="submit" class="btn btn-primary" ng-click="searchTasks()">Search</button>
       </div>
     </div>
   </form>
@@ -187,24 +189,23 @@
     <table class="table table-hover">
       <tr>
         <th>Event Id</th>
-        <th>Task Id</th>
         <th>Task Subject</th>
         <th>Priority</th>
-        <th>Asignee</th>
+        <th>Asigned To</th>
         <th>Details</th>
       </tr>
-      <tr>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
+      <tr ng-repeat="t in searchedTask">
+        <td>{{t.eventId}}</td>
+        <td>{{t.taskSubject}}</td>
+        <td>{{t.priority}}</td>
+        <td>{{t.assignedTo}}</td>
+        <td><a class="btn btn-primary" ng-click="displayTaskDetails(t)">View Details</a></td>
       </tr>
     </table>
   </div>
 </div>
 
+<!-- Section to view and comment on the task-->
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">View Task</h3>
@@ -213,38 +214,44 @@
     <form class="form-horizontal">
     <div class="form-group">
       <br>
-      <label class="col-sm-3 control-label" for="projectReference"> Project Reference : </label>
+      <label class="col-sm-3 control-label" for="projectReference"> Event Id : </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" placeholder="Eg: e12488">
+        <input type="text" class="form-control" placeholder="Eg: e12488" ng-model="task.eventId" readonly>
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-3 control-label" for="description"> Description : </label>
+      <label class="col-sm-3 control-label" for="description" > Description : </label>
       <div class="col-sm-4">
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea class="form-control" rows="3" ng-model="task.description" readonly></textarea>
       </div>
     </div>
     <div class="form-group">
         <label class="col-sm-3 control-label" for="Priority"> Priority : </label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg: High">
+          <input type="text" class="form-control" placeholder="Eg: High" ng-model="task.priority" readonly>
         </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-3 control-label" for="description"> Previous Comments : </label>
+        <label class="col-sm-3 control-label" for="Priority"> Assigned To : </label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg: Magy" ng-model="task.assignedTo" readonly>
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="description" > Previous Comments : </label>
       <div class="col-sm-4">
-        <textarea class="form-control" rows="3"></textarea>
+        <label class="control-label" ng-repeat="c in task.comments" readonly> {{c.name}} : {{c.comment}} </textarea>
       </div>
     </div>
     <div class="form-group">
       <label class="col-sm-3 control-label" for="description"> Add Comment : </label>
       <div class="col-sm-4">
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea class="form-control" rows="3" ng-model="newComment"></textarea>
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-2">
-      <button type="submit" class="btn btn-primary">Update Task</button>
+      <button type="submit" class="btn btn-primary" ng-click="updateTask()">Update Task</button>
       </div>
     </div>
   </form>
@@ -341,8 +348,5 @@
         </div>
       </div>
     </form>
-    <p>
-      {{financeRequest}}
-    </p>
   </div>
 </div>
