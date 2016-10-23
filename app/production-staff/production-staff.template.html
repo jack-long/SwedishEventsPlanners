@@ -6,19 +6,17 @@
     <table class="table table-hover">
       <tr>
         <th>Event Id</th>
-        <th>Task Id</th>
         <th>Task Subject</th>
         <th>Priority</th>
-        <th>Sender</th>
+        <th>Asigned To</th>
         <th>Details</th>
       </tr>
-      <tr>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
-        <td>Sample</td>
+      <tr ng-repeat="t in displayedTasks">
+        <td>{{t.eventId}}</td>
+        <td>{{t.taskSubject}}</td>
+        <td>{{t.priority}}</td>
+        <td>{{t.assignedTo}}</td>
+        <td><a class="btn btn-primary" ng-click="displayTaskDetails(t)">View Details</a></td>
       </tr>
     </table>
   </div>
@@ -32,46 +30,46 @@
     <form class="form-horizontal">
     <div class="form-group">
       <br>
-      <label class="col-sm-3 control-label" for="projectReference"> Project Reference : </label>
+      <label class="col-sm-3 control-label" for="projectReference"> Event Id : </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" placeholder="Eg: e12488">
+        <input type="text" class="form-control" placeholder="Eg: e12488" ng-model="task.eventId" readonly>
       </div>
     </div>
     <div class="form-group">
-      <br>
-      <label class="col-sm-3 control-label" for="projectReference"> Task Subject : </label>
+      <label class="col-sm-3 control-label" for="description" > Description : </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" placeholder="...">
+        <textarea class="form-control" rows="3" ng-model="task.description" readonly></textarea>
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-3 control-label" for="description"> Description : </label>
-      <div class="col-sm-4">
-        <textarea class="form-control" rows="3"></textarea>
-      </div>
+        <label class="col-sm-3 control-label" for="Priority"> Assigned To : </label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Eg: Magy" ng-model="task.assignedTo" readonly>
+        </div>
     </div>
     <div class="form-group">
         <label class="col-sm-3 control-label" for="Priority"> Priority : </label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" placeholder="Eg: High">
+          <input type="text" class="form-control" placeholder="Eg: High" ng-model="task.priority" readonly>
         </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-3 control-label" for="description"> Previous Comments : </label>
+      <label class="col-sm-3 control-label" for="description" > Previous Comments : </label>
       <div class="col-sm-4">
-        <textarea class="form-control" rows="3"></textarea>
+        <label class="control-label" ng-repeat="c in task.comments" readonly> {{c.name}} : {{c.comment}} </textarea>
       </div>
     </div>
     <div class="form-group">
       <label class="col-sm-3 control-label" for="description"> Add Comment : </label>
       <div class="col-sm-4">
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea class="form-control" rows="3" ng-model="newComment"></textarea>
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-2">
-      <button type="submit" class="btn btn-primary">Update Task</button>
+      <button type="submit" class="btn btn-primary" ng-click="updateTask()">Update Task</button>
       </div>
+    </div>
   </form>
   </div>
 </div>
