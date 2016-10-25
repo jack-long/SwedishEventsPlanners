@@ -8,7 +8,7 @@ angular.
 
       //searching for employeeId
       var employees = DB.employee;
-      console.log(JSON.stringify(employees));
+      //console.log(JSON.stringify(employees));
       $scope.searchEmployeeId = function(){
       var employeeId = $scope.searchEId;
       var temp =[];
@@ -33,7 +33,16 @@ angular.
 
     //display recruitment requests
     var recruitmentR = DB.recruitment_request;
-    $scope.recruitmentRequests = recruitmentR;
+    console.log(JSON.stringify(recruitmentR));
+    var tempRR = [];
+    for (var i = 0; i < recruitmentR.length; i++) {
+      if (recruitmentR[i].reviewer == "hr_manager") {
+        tempRR.push(recruitmentR[i]);
+      }
+    }
+    $scope.recruitmentRequests = tempRR;
+
+
 
     //display Recruitment request
     $scope.displayRecruitmentRequest = function(request){
@@ -42,12 +51,22 @@ angular.
 
     //create job adv
     $scope.createJobAd = function(){
-      alert("Yet to be implemented");
+      var recruitmentRequest = $scope.recruitmentRequest;
+      recruitmentRequest.status = "Approved for Job Advertisement";
+      recruitmentRequest.reviewer = "done";
+      DB.recruitment_request.push(recruitmentRequest);
+      alert("Redirect to creating Job Advertisements for : \n" + JSON.stringify(recruitmentRequest));
+      $scope.recruitmentRequest = null;
     };
 
     //OutSource
     $scope.outsourceJob = function(){
-      alert("Yet to be implemented");
+      var recruitmentRequest = $scope.recruitmentRequest;
+      recruitmentRequest.status = "Approved for Outsourcing";
+      recruitmentRequest.reviewer = "done";
+      DB.recruitment_request.push(recruitmentRequest);
+      alert("Redirect to outsourcing Job Advertisements for : \n" + JSON.stringify(recruitmentRequest));
+      $scope.recruitmentRequest = null;
     };
 
     }]

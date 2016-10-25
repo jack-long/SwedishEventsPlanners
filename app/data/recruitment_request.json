@@ -5,7 +5,9 @@
     "requestingDepartment":"Administration",
     "yearsOfExperience":"4",
     "jobTitle":"Customer Service",
-    "jobDescription":" To provide cutomer support for the potrntial clients looking for information on event management"
+    "jobDescription":" To provide cutomer support for the potrntial clients looking for information on event management",
+    "reviewer":"hr_manager",
+    "status":"Submitted to HR Manager for review"
   },
   {
     "recuitmentId":"783",
@@ -13,7 +15,9 @@
     "requestingDepartment":"Production",
     "yearsOfExperience":"2",
     "jobTitle":"Photographer",
-    "jobDescription":" Should be able to use drones to take photographs during open air events "
+    "jobDescription":" Should be able to use drones to take photographs during open air events ",
+    "reviewer":"hr_manager",
+    "status":"Submitted to HR Manager for review"
   },
   {
     "recuitmentId":"789",
@@ -21,7 +25,9 @@
     "requestingDepartment":"Finance",
     "yearsOfExperience":"7",
     "jobTitle":"Accountant",
-    "jobDescription":" To be able to manage the accounts of the company"
+    "jobDescription":" To be able to manage the accounts of the company",
+    "reviewer":"hr_manager",
+    "status":"Submitted to HR Manager for review"
   },
   {
     "recuitmentId":"581",
@@ -29,7 +35,9 @@
     "requestingDepartment":"Services",
     "yearsOfExperience":"3",
     "jobTitle":" Chef",
-    "jobDescription":" Shoud be able to cook Indian food for large events of 500 people"
+    "jobDescription":" Shoud be able to cook Indian food for large events of 500 people",
+    "reviewer":"hr_manager",
+    "status":"Submitted to HR Manager for review"
   },
   {
     "recuitmentId":"243",
@@ -37,6 +45,8 @@
     "requestingDepartment":"Administration",
     "yearsOfExperience":"2",
     "jobTitle":"Secretary to HR Manager",
-    "jobDescription":" Should be able manage the schedule of the HR Manager"
+    "jobDescription":" Should be able manage the schedule of the HR Manager",
+    "reviewer":"hr_manager",
+    "status":"Submitted to HR Manager for review"
   }
 ]

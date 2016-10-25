@@ -8,16 +8,19 @@ angular.
 
       $scope.cancelRecruitmentRequest = function(){
         //todo : add status to recruitment request
-        var status = null;
         console.log("Recruitment request form cleared");
         $scope.recruitmentRequest = null;
       };
 
       $scope.submitRecruitmentRequest = function() {
         //todo : add status to recruitment request
-        var status = "Submitted to HR Manager for review";
-        alert("New recruitment request submitted, with values as follows: \n" + JSON.stringify($scope.recruitmentRequest));
         console.log("New recruitment request submitted, with values as follows: \n" + JSON.stringify($scope.recruitmentRequest));
+        var recruitmentRequest = $scope.recruitmentRequest;
+        recruitmentRequest.reviewer = "hr_manager";
+        recruitmentRequest.status ="Submitted to HR Manager for review";
+        alert("New recruitment request submitted, with values as follows: \n" + JSON.stringify(recruitmentRequest));
+        DB.recruitment_request.push(recruitmentRequest);
+        $scope.recruitmentRequest = null ;
         //todo : implement http post to backed
       };
 
@@ -31,9 +34,13 @@ angular.
 
       $scope.submitFinanceRequest = function() {
         //todo : add status to finance request
-        var status = "Submitted to Finance Manager for review";
-        alert("New finance request submitted, with values as follows: \n" + JSON.stringify($scope.financeRequest));
         console.log("New finance request submitted, with values as follows: \n" + JSON.stringify($scope.financeRequest));
+        var financeRequest = $scope.financeRequest;
+        financeRequest.reviewer = "finance_manager";
+        financeRequest.status ="Submitted to Finance Manager for review";
+        alert("New finance request submitted, with values as follows: \n" + JSON.stringify(financeRequest));
+        DB.finance_request.push(financeRequest);
+        $scope.financeRequest = null;
         //todo : implement http post to backed
       };
 
@@ -73,7 +80,9 @@ angular.
 
       //assign task to subteams
       $scope.assignedTask = function(){
-        alert("New task assigned : \n" + JSON.stringify($scope.assignTask));
+        var assignTask = $scope.assignTask;
+        DB.task.push(assignTask);
+        alert("New task assigned : \n" + JSON.stringify(assignTask));
         //todo : post it to the database
       }
 
@@ -94,5 +103,7 @@ angular.
         alert("Event Id not present !!!");
       }
     };
+
+  
     }]
   });

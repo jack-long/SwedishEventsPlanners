@@ -68,17 +68,19 @@
 
     <table class="table table-hover">
       <tr>
-        <th>Recruitment Request Id</th>
+        <!--<th>Recruitment Request Id</th>-->
         <th>Contract Type</th>
         <th>Requesting Department</th>
         <th>Job Title</th>
+        <th>Status</th>
         <th>Details</th>
       </tr>
       <tr ng-repeat="r in recruitmentRequests">
-        <td>{{r.recuitmentId}}</td>
+        <!--<td>{{r.recuitmentId}}</td>-->
         <td>{{r.contractType}}</td>
         <td>{{r.requestingDepartment}}</td>
         <td>{{r.jobTitle}}</td>
+        <td>{{r.status}}</td>
         <td><a class="btn btn-primary" ng-click="displayRecruitmentRequest(r)">Details</a></td>
       </tr>
     </table>

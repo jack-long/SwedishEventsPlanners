@@ -8,22 +8,39 @@ angular.
     	this.requests = DB.event_requests;
 
       //get financeRequests
-      $scope.financeRequests = DB.finance_request;
+      var financeRequest = DB.finance_request;;
+      var tempFR = []
+      for (var i = 0; i < financeRequest.length; i++) {
+        if (financeRequest[i].reviewer == "finance_manager") {
+          tempFR.push(financeRequest[i]);
+        }
+      }
+      $scope.financeRequests = tempFR;
 
       //display finance requests
       $scope.displayFinanceRequest = function(request){
-        console.log(JSON.stringify(request));
+        //console.log(JSON.stringify(request));
         $scope.displayedfinanceRequest = request;
-        console.log(JSON.stringify($scope.displayedfinanceRequest));
+        //console.log(JSON.stringify($scope.displayedfinanceRequest));
       };
 
       //approval of request
       $scope.approveFinanceRequest = function(){
-        alert("Finance request approved : "+ JSON.stringify($scope.displayedfinanceRequest));
+        var financeRequest = $scope.displayedfinanceRequest;
+        financeRequest.status ="Approved";
+        financeRequest.reviewer="Done";
+        DB.finance_request.push(financeRequest);
+        alert("Finance request approved : "+ JSON.stringify(financeRequest));
+        $scope.displayedfinanceRequest = null;
       };
 
       $scope.declineFinanceRequest = function(){
-        alert("Finance request declined : "+ JSON.stringify($scope.displayedfinanceRequest));
+        var financeRequest = $scope.displayedfinanceRequest;
+        financeRequest.status ="Declined";
+        financeRequest.reviewer="Done";
+        DB.finance_request.push(financeRequest);
+        alert("Finance request declined : "+ JSON.stringify(financeRequest));
+        $scope.displayedfinanceRequest = null;
       }
     }]
   });

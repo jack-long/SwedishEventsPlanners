@@ -55,12 +55,14 @@
         <th>Event Id</th>
         <th>Requesting Department</th>
         <th>Amount Required</th>
+        <th>Status</th>
         <th>Details</th>
       </tr>
       <tr ng-repeat="f in financeRequests">
         <td>{{f.eventId}}</td>
         <td>{{f.requestingDepartment}}</td>
         <td>{{f.requiredAmount}}</td>
+        <td>{{f.status}}</td>
         <td><a class="btn btn-primary" ng-click="displayFinanceRequest(f)">View Details</a></td>
       </tr>
     </table>

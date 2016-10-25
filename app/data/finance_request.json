@@ -3,42 +3,56 @@
     "eventId":"e123",
     "requestingDepartment":"Production",
     "requiredAmount":"6000 SEK",
-    "reason":"For buying decorations for the event"
+    "reason":"For buying decorations for the event",
+    "reviewer":"finance_manager",
+    "status":"Submitted to Finance Manager for review"
   },
   {
     "eventId":"e456",
     "requestingDepartment":"Administration",
     "requiredAmount":"5670 SEK",
-    "reason":"For office supplies"
+    "reason":"For office supplies",
+    "reviewer":"finance_manager",
+    "status":"Submitted to Finance Manager for review"
   },
   {
     "eventId":"e551",
     "requestingDepartment":"Finance",
     "requiredAmount":"1200 SEK",
-    "reason":"For buying license for tax calculating software"
+    "reason":"For buying license for tax calculating software",
+    "reviewer":"finance_manager",
+    "status":"Submitted to Finance Manager for review"
   },
   {
     "eventId":"e827",
     "requestingDepartment":"Services",
     "requiredAmount":"873 SEK",
-    "reason":"For buying utenciles for the event"
+    "reason":"For buying utenciles for the event",
+    "reviewer":"finance_manager",
+    "status":"Submitted to Finance Manager for review"
   },
   {
     "eventId":"e923",
     "requestingDepartment":"Production",
     "requiredAmount":"9000 SEK",
-    "reason":"For Wi-Fi Routers"
+    "reason":"For Wi-Fi Routers",
+    "reviewer":"finance_manager",
+    "status":"Submitted to Finance Manager for review"
   },
   {
     "eventId":"e772",
     "requestingDepartment":"Production",
     "requiredAmount":"6800 SEK",
-    "reason":"For buying camera for photographing the event"
+    "reason":"For buying camera for photographing the event",
+    "reviewer":"finance_manager",
+    "status":"Submitted to Finance Manager for review"
   },
   {
     "eventId":"e674",
     "requestingDepartment":"Services",
     "requiredAmount":"8000 SEK",
-    "reason":"For buying food supplies"
+    "reason":"For buying food supplies",
+    "reviewer":"finance_manager",
+    "status":"Submitted to Finance Manager for review"
   }
 ]
