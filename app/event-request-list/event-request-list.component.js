@@ -5,11 +5,13 @@ angular.
   component('eventRequestList', {
     templateUrl: 'event-request-list/event-request-list.template.html',
     controller: ['$http', '$rootScope', '$location', '$window', 'DB',
-    	function eventRequestListController($http, $rootScope, $location, $window, DB) {
+    	function EventRequestListController($http, $rootScope, $location, $window, DB) {
     		// role check
         // this.user = $rootScope.user;
         $rootScope.user = DB.user;
         this.user = DB.user;
+        // test sample
+        this.test_sample = "sample";
 
         if (this.user == "senior_customer_service"){
             this.newMeetingPermission = true;
