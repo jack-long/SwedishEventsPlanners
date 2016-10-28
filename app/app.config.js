@@ -60,8 +60,10 @@ app.value('DB', {user: "", event_requests: [], login: false});
 // initialization
 app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', 'DB',
   function($http, $rootScope, $location, $scope, DB){
-    $rootScope.user = null;
-    $rootScope.password = "password";
+    // $rootScope.user = null;
+    // $rootScope.password = "password";
+    DB.user = null;
+    DB.password = "password";
 
     // add info from http request
     $http.get('data/event_requests.json').then(function(response) {
@@ -90,8 +92,8 @@ app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', '
 
     // todo: logout not work
     this.logout = function(){
-      $rootScope.user = null;
-      console.log("init" + $rootScope.user);
+      DB.user = null;
+      console.log("init" + DB.user);
       $location.path("/login")
     }
   }]
