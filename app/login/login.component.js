@@ -5,11 +5,10 @@ angular.
   module('login').
   component('login', {
     templateUrl: 'login/login.template.html',
-    controller: ['$rootScope', '$location', 'DB',
-    	function LoginController($rootScope, $location, DB) {
+    controller: ['$location', 'DB',
+    	function LoginController($location, DB) {
         var self = this;  // in order to pass it inside child function.
-        // self.user = $rootScope.user;
-        self.password = $rootScope.password;
+        self.password = DB.password;
 
         this.login = function(){
           switch(self.user){
@@ -17,7 +16,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/event_requests");
               }
               else{
@@ -29,7 +27,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/event_requests");
               }
               else{
@@ -41,7 +38,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/event_requests");
               }
               else{
@@ -53,7 +49,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/production-manager");
               }
               else{
@@ -65,7 +60,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/production-staff");
               }
               else{
@@ -77,7 +71,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/service-department-manager");
               }
               else{
@@ -89,7 +82,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/service-department-staff");
               }
               else{
@@ -101,7 +93,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/hr-manager");
               }
               else{
@@ -113,7 +104,6 @@ angular.
               if(self.password == "password"){
                 DB.user = self.user;
                 DB.login = true;
-                $rootScope.login = true;
                 $location.path("/finance-manager");
               }
               else{
@@ -125,7 +115,6 @@ angular.
             default:
               alert("User not exist!");
           }  // end of switch
-        console.log($location.path());  // test
     		}
     }]
   })
