@@ -37,3 +37,19 @@ npm start
 Karma is the test runner for unit tests
 
 Protractor is used to run E2E tests
+
+### login
+
+After `customer_service` login, `DB.user` is `customer_service`, `path` is `/event_requests`.
+
+### create new event request
+
+length of `DB.event_requests` increase by `1`
+
+### review event request
+
+After `senior_customer_service` `approve` request, request `reviewer` changed to `finance_manager`.
+After `admin_manger` `approve` request, request `reviewer` changed to `approved`.
+After `senior_customer_service` `reject` request, `reviewer` changed to `Rejected by SeniorCS`.
+After `admin_manger` `reject` request, `reviewer` changed to `Rejected by Admin`.
+

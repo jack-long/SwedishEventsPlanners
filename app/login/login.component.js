@@ -5,8 +5,8 @@ angular.
   module('login').
   component('login', {
     templateUrl: 'login/login.template.html',
-    controller: ['$location', 'DB',
-    	function LoginController($location, DB) {
+    controller: ['$location', 'DB', '$rootScope',
+    	function LoginController($location, DB, $rootScope) {
         var self = this;  // in order to pass it inside child function.
         self.password = DB.password;
 
@@ -15,6 +15,7 @@ angular.
             case "customer_service": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;  // needed to show "logout"
                 DB.login = true;
                 $location.path("/event_requests");
               }
@@ -26,6 +27,7 @@ angular.
             case "senior_customer_service": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/event_requests");
               }
@@ -37,6 +39,7 @@ angular.
             case "admin_manager": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/event_requests");
               }
@@ -48,6 +51,7 @@ angular.
             case "production_manager": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/production-manager");
               }
@@ -59,6 +63,7 @@ angular.
             case "production_staff": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/production-staff");
               }
@@ -70,6 +75,7 @@ angular.
             case "service_department_manager": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/service-department-manager");
               }
@@ -81,6 +87,7 @@ angular.
             case "service_department_staff": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/service-department-staff");
               }
@@ -92,6 +99,7 @@ angular.
             case "hr_manager": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/hr-manager");
               }
@@ -103,6 +111,7 @@ angular.
             case "finance_manager": {
               if(self.password == "password"){
                 DB.user = self.user;
+                $rootScope.login = true;
                 DB.login = true;
                 $location.path("/finance-manager");
               }
