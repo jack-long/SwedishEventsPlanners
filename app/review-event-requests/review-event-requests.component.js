@@ -5,7 +5,7 @@ angular.
   component('reviewEventRequests', {
     templateUrl: 'review-event-requests/review-event-requests.template.html',
     controller: ['$http', '$window', '$location', '$routeParams', 'DB',
-    	function reviewEventRequestsController($http, $window, $location, $routeParams, DB) {
+    	function ReviewEventRequestsController($http, $window, $location, $routeParams, DB) {
     		if(DB.user == "customer_service"){
     			this.privileged = false;
     		} else {
@@ -63,6 +63,9 @@ angular.
 			// $location.path("/event_requests");
 			$window.history.go(-1);
 		}
+
+		// test sample
+		this.test_sample = "sample";
 
     }]
   });
