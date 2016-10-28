@@ -5,14 +5,11 @@ angular.
   module('login').
   component('login', {
     templateUrl: 'login/login.template.html',
-    controller: ['$http', '$rootScope', '$location', 'DB',
-    	function LoginController($http, $rootScope, $location, DB) {
-
+    controller: ['$rootScope', '$location', 'DB',
+    	function LoginController($rootScope, $location, DB) {
         var self = this;  // in order to pass it inside child function.
         // self.user = $rootScope.user;
         self.password = $rootScope.password;
-        this.test_pw = "password";
-        self.test = true;
 
         this.login = function(){
           switch(self.user){
@@ -127,7 +124,8 @@ angular.
             // add more case
             default:
               alert("User not exist!");
-          }
+          }  // end of switch
+        console.log($location.path());  // test
     		}
     }]
   })

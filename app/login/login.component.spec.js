@@ -6,11 +6,19 @@ describe('login', function() {
   // Test the controller
   describe('LoginController', function() {
 
-    it('should create a `password` with value `password`', inject(function($componentController) {
-      var ctrl = $componentController('login');
+    it('should redirect `customer_service` to `/event_requests`', inject(function($componentController, $location, DB) {
+      var scope = {};
+      var location = $location;
+      var db = DB;
 
-      expect(ctrl.test_pw).toBe('password');
-      expect(ctrl.test).toBe(true);
+      var ctrl = $componentController('login', {$scope:scope, $location:location, DB:db});
+
+      ctrl.password = "password";
+      ctrl.user = "customer_service";
+      ctrl.login();
+
+      expect(location.path()).toBe('/event_requests');
+      expect(db.user).toBe('customer_service');
     }));
 
   });
