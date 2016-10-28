@@ -4,7 +4,7 @@ angular.
   module('productionStaff').
   component('productionStaff', {
     templateUrl: 'production-staff/production-staff.template.html',
-    controller: ['$scope','DB', function View1Controller($scope, DB) {
+    controller: ['$scope','DB', function productionStaffController($scope, DB) {
 
       //display all tasks
       var assignedTasks = DB.task;
@@ -19,6 +19,6 @@ angular.
         alert("New comment added to the task: \n" + $scope.newComment);
         // todo : create array of comments and add the new comment to it
       };
-      
+
     }]
   });

@@ -4,7 +4,7 @@ angular.
   module('hrManager').
   component('hrManager', {
     templateUrl: 'hr-manager/hr-manager.template.html',
-    controller: ['$scope', 'DB', function View1Controller($scope, DB) {
+    controller: ['$scope', 'DB', function hrManagerController($scope, DB) {
 
       //searching for employeeId
       var employees = DB.employee;

@@ -4,7 +4,7 @@ angular.
   module('financeManager').
   component('financeManager', {
     templateUrl: 'finance-manager/finance-manager.template.html',
-    controller: ['$scope','DB', function View1Controller($scope,DB) {
+    controller: ['$scope','DB', function financeManagerController($scope,DB) {
     	this.requests = DB.event_requests;
 
       //get financeRequests

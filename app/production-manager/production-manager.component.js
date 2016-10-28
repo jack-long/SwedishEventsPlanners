@@ -4,7 +4,7 @@ angular.
   module('productionManager').
   component('productionManager', {
     templateUrl: 'production-manager/production-manager.template.html',
-    controller: ['$scope', 'DB', function View1Controller($scope, DB) {
+    controller: ['$scope', 'DB', function productionManagerController($scope, DB) {
 
       $scope.cancelRecruitmentRequest = function(){
         //todo : add status to recruitment request
@@ -104,6 +104,6 @@ angular.
       }
     };
 
-  
+
     }]
   });
