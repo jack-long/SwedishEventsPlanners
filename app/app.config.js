@@ -10,9 +10,6 @@ var app = angular.
         .when('/login', {
           template: '<login></login>'
         })
-        .when('/view1', {
-          template: '<view1></view1>'
-        })
         .when('/customer-service', {
           template: '<customer-service></customer-service>'
         })
@@ -58,10 +55,21 @@ var app = angular.
 app.value('DB', {user: "", event_requests: [], login: false});
 
 // initialization
-app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', 'DB',
-  function($http, $rootScope, $location, $scope, DB){
-    // $rootScope.user = null;
-    // $rootScope.password = "password";
+app.controller("SEPController", ['$location', 'DB',
+  function($location, DB) {
+
+    // todo: logout not work
+    this.logout = function(){
+      DB.user = null;
+      console.log("init" + DB.user);
+      $location.path("/login")
+    }
+  }]
+)
+
+// initialize global variables
+app.run(['$http','DB', function($http, DB) {
+
     DB.user = null;
     DB.password = "password";
 
@@ -89,12 +97,4 @@ app.controller("SEPController", ['$http', '$rootScope', '$location', '$scope', '
     $http.get('data/schedule.json').then(function(response) {
         DB.schedule = response.data;
     });
-
-    // todo: logout not work
-    this.logout = function(){
-      DB.user = null;
-      console.log("init" + DB.user);
-      $location.path("/login")
-    }
-  }]
-)
+}])
