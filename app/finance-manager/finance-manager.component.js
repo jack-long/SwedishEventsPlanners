@@ -28,7 +28,7 @@ angular.
       $scope.approveFinanceRequest = function(){
         var financeRequest = $scope.displayedfinanceRequest;
         financeRequest.status ="Approved";
-        financeRequest.reviewer="Done";
+        financeRequest.reviewer="done";
         DB.finance_request.push(financeRequest);
         alert("Finance request approved : "+ JSON.stringify(financeRequest));
         $scope.displayedfinanceRequest = null;
@@ -37,7 +37,7 @@ angular.
       $scope.declineFinanceRequest = function(){
         var financeRequest = $scope.displayedfinanceRequest;
         financeRequest.status ="Declined";
-        financeRequest.reviewer="Done";
+        financeRequest.reviewer="done";
         DB.finance_request.push(financeRequest);
         alert("Finance request declined : "+ JSON.stringify(financeRequest));
         $scope.displayedfinanceRequest = null;
