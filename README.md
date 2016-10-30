@@ -36,6 +36,12 @@ npm start
 
 Karma is the test runner for unit tests
 
+To start the unit test use the following command:
+
+```
+npm test
+```
+
 Protractor is used to run E2E tests
 
 ### login
@@ -52,4 +58,3 @@ After `senior_customer_service` `approve` request, request `reviewer` changed to
 After `admin_manger` `approve` request, request `reviewer` changed to `approved`.
 After `senior_customer_service` `reject` request, `reviewer` changed to `Rejected by SeniorCS`.
 After `admin_manger` `reject` request, `reviewer` changed to `Rejected by Admin`.
-
