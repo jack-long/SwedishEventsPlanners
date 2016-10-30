@@ -52,7 +52,7 @@ var app = angular.
   ]);
 
 // The Value Recipe
-app.value('DB', {user: "", event_requests: [], login: false});
+app.value('DB', {user: "", event_requests: [], employee: [], finance_request: [], recruitment_request: [], schedule: [], task: [], login: false});
 
 // initialization
 app.controller("SEPController", ['$location', 'DB',

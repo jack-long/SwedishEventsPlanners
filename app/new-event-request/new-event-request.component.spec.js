@@ -34,7 +34,7 @@ describe('newEventRequest', function() {
       ctrl.create();
 
       var lengthAfter = db.event_requests.length;
-      // console.log("requests length before: " + lengthBefore + ", after: " + lengthAfter);
+      //console.log("requests length before: " + lengthBefore + ", after: " + lengthAfter);
 
       expect(lengthAfter).toBe(lengthBefore + 1);
     }));

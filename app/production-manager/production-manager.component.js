@@ -51,8 +51,8 @@ angular.
 
       //search task function
       var tasks = DB.task;
-      console.log(tasks.length);
-      console.log(JSON.stringify(tasks));
+      //console.log(tasks.length);
+      //console.log(JSON.stringify(tasks));
       $scope.searchTasks = function() {
         var eventId = $scope.searchEventId;
         var temp =[];
@@ -88,7 +88,7 @@ angular.
 
     // search events
     var eventRequests= DB.event_requests;
-    console.log(JSON.stringify(eventRequests));
+    //console.log(JSON.stringify(eventRequests));
     $scope.searchEvent = function(){
       var eventId = $scope.searchRecordNumber;
       $scope.displayedEvent = null ;
@@ -102,6 +102,15 @@ angular.
       }else {
         alert("Event Id not present !!!");
       }
+    };
+
+    //function used in unit testing only
+    $scope.createEventRequest = function(eventRequest){
+      //console.log(JSON.stringify(eventRequest));
+      DB.event_requests.push(eventRequest);
+      var events= DB.event_requests;
+      //console.log(JSON.stringify(events));
+
     };
 
 
